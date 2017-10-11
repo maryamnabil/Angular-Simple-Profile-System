@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+  <button (click)="getDatafromService()">Get Data</button>
+
+<div class="container">
+  <h2>Database Table</h2>          
+  <table class="table" >
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Profile picture</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>national ID</th>
+        <th>university</th>
+        <th>faculty</th>
+        <th>major</th>
+        <th>minor</th>
+        <th>expected graduation year</th>
+
+
+      </tr>
+    </thead>
+    
+    <tbody *ngFor="let single of result; let i= index">
+      <tr *ngIf="result">
+        <!--
+        <td>{{result[i].Name}}</td>
+        <td>{{result[i].Profile picture}}</td>
+        <td>{{result[i].Email}}</td>
+        <td>{{result[i].Mobile}}</td>
+        <td>{{result[i].nationalID}}</td>
+        <td>{{result[i].university}}</td>
+        <td>{{result[i].faculty}}</td>
+        <td>{{result[i].major}}</td>
+        <td>{{result[i].minor}}</td>
+        <td>{{result[i].GraduationYear}}</td> -->
+    </tr>
+  </tbody>
+  </table>
+</div>
+
+</body>
+</html>

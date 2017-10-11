@@ -1,0 +1,124 @@
+<form class="form-horizontal" (ngSubmit)="submitme(f)" #f="ngForm">
+  <fieldset>
+  	
+  <!--name-->
+    <div class="form-group">
+      <label for="Name" class="col-lg-2 control-label">Name</label>
+      <div class="col-lg-4">
+        <input type="text" class="form-control" id="inputName" placeholder="Name" name="Name" required ngModel #Fn="ngModel">
+      </div>
+     </div>
+    <!-- Validation-->
+    <div class="alert alert-danger text-center" *ngIf="!Fn.valid && Fn.touched">
+	   <div *ngIf="Fn.errors.required">Name Can not be Empty</div> 
+    </div>
+    <!--Profile Picture-->
+    <div class="form-group">
+      <label for="Profile Picture" class="col-lg-2 control-label">Profile Picture</label>
+      <div class="col-lg-4">
+        <input type="file" class="form-control" id="inputpic" name="Profile Picture" accept="image/*">
+      </div>
+     </div> 
+
+  	<!--email-->
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+      <div class="col-lg-4">
+        <input type="text" class="form-control" id="inputEmail" placeholder="Email" required ngModel pattern="^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$" name="email" #email="ngModel">
+      </div>
+    </div>
+        <!-- Validation-->
+  <div class="alert alert-danger text-center" *ngIf="!email.valid && email.touched">
+    <div *ngIf="email.errors.required">Email Can not be Empty</div> 
+    <div *ngIf="email.errors.pattern">Email must be numbers only </div>
+  </div>
+
+    <!--Mobile-->
+    <div class="form-group">
+      <label for="inputPMobile" class="col-lg-2 control-label">Mobile</label>
+      <div class="col-lg-4">
+        <input type="text" class="form-control" id="inputPMobile" placeholder="Mobile" name="Mobile" required ngModel pattern="^[0-9]*$" #Mobile="ngModel">
+      </div>
+    </div> 
+    <!-- Validation-->
+    <div class="alert alert-danger text-center" *ngIf="!Mobile.valid && Mobile.touched">
+    <div *ngIf="Mobile.errors.required">Mobile Can not be Empty</div> 
+    <div *ngIf="Mobile.errors.pattern">Mobile must be numbers only </div>
+  </div>
+
+
+    <!--National ID-->
+    <div class="form-group">
+      <label for="inputNationalID" class="col-lg-2 control-label">National ID</label>
+      <div class="col-lg-4">
+        <input type="text" class="form-control" id="inputNationalID" placeholder="National ID" name="NationalID"  required ngModel pattern="^[0-9]*$" #ID="ngModel">
+      </div>
+    </div> 
+        <!-- Validation-->
+    <div class="alert alert-danger text-center" *ngIf="!ID.valid && Mobile.touched">
+    <div *ngIf="ID.errors.required">ID Can not be Empty</div> 
+    <div *ngIf="ID.errors.pattern">ID must be numbers only </div>
+  </div> 
+
+	<!--University-->
+    <div class="form-group">
+      <label for="University" class="col-lg-2 control-label">University</label>
+      <div class="col-lg-4">
+        <input type="text" class="form-control" id="inputUniversity" placeholder="University" name="University" required ngModel #univ="ngModel">
+      </div>
+     </div> 
+         <!-- Validation-->
+    <div class="alert alert-danger text-center" *ngIf="!univ.valid && univ.touched">
+    <div *ngIf="univ.errors.required">University Can not be Empty</div> 
+  </div>  
+    <!--Faculty-->
+    <div class="form-group">
+      <label for="Faculty" class="col-lg-2 control-label">Faculty</label>
+      <div class="col-lg-4">
+        <input type="text" class="form-control" id="inputfaculty" placeholder="Faculty" name="Faculty" required ngModel #fac="ngModel">
+      </div>
+     </div> 
+         <!-- Validation-->
+    <div class="alert alert-danger text-center" *ngIf="!fac.valid && fac.touched">
+    <div *ngIf="fac.errors.required">Faculty Can not be Empty</div> 
+  </div>    
+
+	<!--Major-->
+    <div class="form-group">
+      <label for="Major" class="col-lg-2 control-label">Major</label>
+      <div class="col-lg-4">
+        <input type="text" class="form-control" id="inputMajor" placeholder="Major" name="Major" required ngModel #maj="ngModel">
+      </div>
+     </div> 
+      <!-- Validation-->
+    <div class="alert alert-danger text-center" *ngIf="!maj.valid && maj.touched">
+    <div *ngIf="maj.errors.required">Major Can not be Empty</div> 
+  </div>  
+     <!--Minor-->
+    <div class="form-group">
+      <label for="Minor" class="col-lg-2 control-label">Minor</label>
+      <div class="col-lg-4">
+        <input type="text" class="form-control" id="inputMinor" placeholder="Minor" name="Minor" required ngModel #min="ngModel">
+      </div>
+     </div> 
+       <!-- Validation-->
+    <div class="alert alert-danger text-center" *ngIf="!min.valid && min.touched">
+    <div *ngIf="min.errors.required">Major Can not be Empty</div> 
+  </div>      
+     <!--Expected Graduation Year-->
+    <div class="form-group">
+      <label for="Expected Graduation Year" class="col-lg-2 control-label">Expected Graduation Year</label>
+      <div class="col-lg-4">
+        <input type="number" class="form-control" id="inputyear" placeholder="Expected Graduation Year" name="Expected Graduation Year">
+      </div>
+     </div> 
+
+        <!-- Submit Button-->
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+
+  </fieldset>
+</form>
